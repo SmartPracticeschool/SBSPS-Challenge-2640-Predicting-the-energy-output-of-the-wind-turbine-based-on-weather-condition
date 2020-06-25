@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Comparative Analysis</title>
+
+    <link rel="canonical" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        sizes="180x180">
+    <link rel="icon" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" sizes="32x32"
+        type="image/png">
+    <link rel="icon" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" sizes="16x16"
+        type="image/png">
+    <link rel="manifest" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="mask-icon" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        color="#563d7c">
+    <link rel="icon" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        
+
+        
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .slidecontainer {
+      width: 15%;
+      
+    }
+    
+    .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 25px;
+      background: #58ACFA;
+      outline: none;
+      opacity: 0.4;
+      -webkit-transition: .2s;
+      transition: opacity .3s;
+    }
+    
+    .slider:hover {
+      opacity: 2;
+    }
+    
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+    
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+    /* .container{
+        
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+    } */
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Wind Energy Predictor</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Wind Farm Locations <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Comparative Analysis <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+
+            </div>
+            <div>
+                <img src="nav_logo.png" alt="Wind Mill logo" width="120" height="53" style="align-items: flex-end;">
+            </div>
+        </nav>
+    </div>
+    <div>
+        <h1 style="text-align: center;">
+            Comparative Analysis
+        </h1>
+    </div>
+
+    <div>
+        <main role="main" class="container">
+            <div class="jumbotron">
+        <label>Specify the number of hrs using slider:</label>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="72" value="50"  id="myRange">
+            <p>Value: <span id="demo"></span>hrs</p>
+          </div>
+          
+          <script>
+          var slider = document.getElementById("myRange");
+          var output = document.getElementById("demo");
+          output.innerHTML = slider.value;
+          
+          slider.oninput = function() {
+            output.innerHTML = this.value;
+          }
+          </script>
+           <form action="upload" method="post" enctype="multipart/form-data">
+            <label for="excel_file">Upload File (*only in .xls format):</label>
+            <input type="file" name="excel_file" id="excel_file" multiple accept=".xls,.xlsx"><br>
+            <input type="submit" value="Upload" class="btn btn-primary">
+        </form>
+
+        <hr>
+        <div class="container">
+            <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js">
+            anychart.onDocumentReady(function() {
+                var data = "Sample.xls"
+                var chart = anychart.bar();
+                chart.data(data);
+                chart.title("Analyse");
+                chart.container("container");
+                chart.draw();
+            })
+            </script>
+        </div>
+
+
+          </div>
+        </main>
+    </div>
+</body>
+</html>
