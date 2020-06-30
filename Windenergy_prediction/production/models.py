@@ -13,9 +13,11 @@ class wind_details(models.Model):
     country = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     no_of_wind = models.CharField(max_length=100)
+    latitude = models.CharField(max_length=100)
+    longitude = models.CharField(max_length=100)
 
 class location_details(models.Model):
     user_name = models.CharField(max_length=100)
     lattitude = models.CharField(max_length=100)
     longtitude = models.CharField(max_length=100)
-
+    machine_name = models.CharField(max_length=100)

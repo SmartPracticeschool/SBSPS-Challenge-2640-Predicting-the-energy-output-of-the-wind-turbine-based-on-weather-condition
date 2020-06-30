@@ -4,9 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.0.1">
     <title>Comparative Analysis</title>
 
     <link rel="canonical" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -49,9 +46,6 @@
                 font-size: 3.5rem;
             }
         }
-        
-
-        
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -128,8 +122,10 @@
         <main role="main" class="container">
             <div class="jumbotron">
         <label>Specify the number of hrs using slider:</label>
+        <form action="upload" method="post" enctype="multipart/form-data">
+         {% csrf_token%}
         <div class="slidecontainer">
-            <input type="range" min="1" max="72" value="50"  id="myRange">
+            <input type="range" min="1" max="72" value="50"  id="myRange" name="slider">
             <p>Value: <span id="demo"></span>hrs</p>
           </div>
           
@@ -142,7 +138,7 @@
             output.innerHTML = this.value;
           }
           </script>
-           <form action="upload" method="post" enctype="multipart/form-data">
+
             <label for="excel_file">Upload File (*only in .xls format):</label>
             <input type="file" name="excel_file" id="excel_file" multiple accept=".xls,.xlsx"><br>
             <input type="submit" value="Upload" class="btn btn-primary">

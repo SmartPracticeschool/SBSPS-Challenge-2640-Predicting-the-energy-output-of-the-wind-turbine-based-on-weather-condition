@@ -9,4 +9,6 @@ urlpatterns = [
     path('comp_analysis', views.comp_analysis, name='comp_analysis'),
     path('windform_location', views.windform_location, name="windform_location"),
     path('logout', views.logout, name="logout"),
+    path('map_display',views.map_display, name="map_display"),
+    path('upload',views.upload,name="upload"),
 ]
