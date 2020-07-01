@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c09de46-06dc-40bb-8604-b3237871f2f1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Windenergy_prediction/static/i10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Windenergy_prediction/static/i2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Windenergy_prediction/static/i8.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WindSpeed.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Windenergy_prediction/Templates/My-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/Templates/My-home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Windenergy_prediction/Templates/Wind farm Location.html" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/Templates/Wind farm Location.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Windenergy_prediction/Templates/comparative analysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/Templates/comparative analysis.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Windenergy_prediction/Templates/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/Templates/map.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Windenergy_prediction/Templates/user_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/Templates/user_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Windenergy_prediction/production/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/production/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Windenergy_prediction/production/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/production/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Windenergy_prediction/production/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/production/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +34,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../TCS/Case Study" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Windenergy_prediction/static" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Windenergy_prediction/production" />
       <recent name="$PROJECT_DIR$/Windenergy_prediction/accounts" />
