@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.models import auth,User
 from django.contrib.auth import authenticate
 from .models import user_details
+
+from production.models import wind_details
+
 # Create your views here.
 def login(request):
     if request.method == "POST":
@@ -10,7 +13,12 @@ def login(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             auth.login(request,user)
-            return redirect('production/main')
+            username = User.objects.get(username=request.user.username)
+            usr_detail = wind_details.objects.filter(username=username).values()
+            if len(usr_detail) == 0:
+                return redirect('production/main')
+            else:
+                return redirect('production/direct')
         else:
             return render(request, 'login.htm', {'error': 'Wrong Credentials'})
     else:

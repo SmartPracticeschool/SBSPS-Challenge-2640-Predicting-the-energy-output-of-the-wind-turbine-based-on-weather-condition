@@ -7,11 +7,14 @@ from django.views.decorators.cache import cache_control
 def main(request):
     username = User.objects.get(username=request.user.username)
     return render(request, "user_home.html", {"username": username})
+def direct(request):
+    username = User.objects.get(username=request.user.username)
+    return render(request, "My-home.html", {"username": username})
 
 def map(request):
     return render(request,"map.html")
 def map_display(request):
-    return render(request, map.html)
+    return render(request, "map.html")
 
 def add_location_map(request):
     username = User.objects.get(username=request.user.username)
