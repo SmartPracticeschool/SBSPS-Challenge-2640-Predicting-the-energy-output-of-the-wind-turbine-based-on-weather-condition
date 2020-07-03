@@ -12,4 +12,7 @@ urlpatterns = [
     path('map_display',views.map_display, name="map_display"),
     path('upload',views.upload,name="upload"),
     path('direct',views.direct,name="direct"),
+    path('show_analysis',views.show_analysis,name='show_analysis'),
+    path('show_graph',views.show_graph,name="show_graph"),
+    #path('show_predict_values',views.show_predict_values,name="show_predict_values"),
 ]

@@ -3,11 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="3c09de46-06dc-40bb-8604-b3237871f2f1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Windenergy_prediction/Templates/My-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/Templates/My-home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Windenergy_prediction/Templates/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/Templates/map.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Windenergy_prediction/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Data Analysis-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Data Analysis-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/new_model-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/new_model-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis_Images/Algorithm_working.png" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis_Images/Algorithm_working.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis_Images/Total_view_of_prediction.png" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis_Images/Total_view_of_prediction.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis_Images/model_prediction.png" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis_Images/model_prediction.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data Analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Data Analysis.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Windenergy_prediction/Templates/comparative analysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/Templates/comparative analysis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Windenergy_prediction/production/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/production/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Windenergy_prediction/production/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/production/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Windenergy_prediction/production/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Windenergy_prediction/production/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/final_output.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_model.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/new_model.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,14 +36,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TCS/Case Study" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Windenergy_prediction/production" />
       <recent name="$PROJECT_DIR$/Windenergy_prediction/static" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Windenergy_prediction/production" />
+      <recent name="$PROJECT_DIR$/Windenergy_prediction/Windenergy_prediction" />
       <recent name="$PROJECT_DIR$/Windenergy_prediction/accounts" />
       <recent name="$PROJECT_DIR$/Windenergy_prediction/homepage" />
     </key>
@@ -55,20 +65,13 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="495" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1593522607783">
+    <state x="495" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1593677484973">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
-    <state x="495" y="154" width="424" height="484" key="FileChooserDialogImpl/59.27.1307.741@59.27.1307.741" timestamp="1593522607783" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Windenergy_prediction/production/views.py</url>
-          <line>6</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="495" y="154" width="424" height="484" key="FileChooserDialogImpl/59.27.1307.741@59.27.1307.741" timestamp="1593677484973" />
+    <state x="201" y="31" key="SettingsEditor" timestamp="1593664249150">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="201" y="31" key="SettingsEditor/59.27.1307.741@59.27.1307.741" timestamp="1593664249150" />
   </component>
 </project>

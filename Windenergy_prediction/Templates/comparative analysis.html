@@ -121,28 +121,41 @@
     <div>
         <main role="main" class="container">
             <div class="jumbotron">
-        <label>Specify the number of hrs using slider:</label>
-        <form action="upload" method="post" enctype="multipart/form-data">
+
+
+             <form action="upload" method="POST" enctype="multipart/form-data">
+             {% csrf_token%}
+            <label for="excel_file">Upload File (*only in .xls format):</label>
+            <input type="file" name="file" id="excel_file" multiple accept=".xls,.xlsx"><br>
+            <input type="submit" value="Upload" class="btn btn-primary">
+            </form>
+                <h3><center>{{result}}</center></h3>
+                <br>
+
+        <form action="show_graph" method="post">
          {% csrf_token%}
+            <label for="column_name">Enter Column Name that you want to predict</label><br>
+            <input type="text" name="column_name" id="column_name" placeholder="Column_name"><br>
         <div class="slidecontainer">
+            <label for="myRange">Specify the number of hrs using slider:</label><br>
             <input type="range" min="1" max="72" value="50"  id="myRange" name="slider">
             <p>Value: <span id="demo"></span>hrs</p>
           </div>
-          
+
           <script>
           var slider = document.getElementById("myRange");
           var output = document.getElementById("demo");
           output.innerHTML = slider.value;
-          
+
           slider.oninput = function() {
             output.innerHTML = this.value;
           }
           </script>
+            <input type="submit" value="Prediction Graph" class="btn btn-primary">
+            </form>
+                <br>
+        <a href="show_analysis" role="button" class="btn btn-primary">Show Analysis</a>
 
-            <label for="excel_file">Upload File (*only in .xls format):</label>
-            <input type="file" name="excel_file" id="excel_file" multiple accept=".xls,.xlsx"><br>
-            <input type="submit" value="Upload" class="btn btn-primary">
-        </form>
 
         <hr>
         <div class="container">

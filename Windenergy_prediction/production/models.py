@@ -1,5 +1,5 @@
 from django.db import models
-
+from django import forms
 # Create your models here.
 class wind_details(models.Model):
     username = models.CharField(max_length=100)
@@ -21,3 +21,6 @@ class location_details(models.Model):
     lattitude = models.CharField(max_length=100)
     longtitude = models.CharField(max_length=100)
     machine_name = models.CharField(max_length=100)
+
+class file_details(forms.Form):
+    file = forms.FileField()
