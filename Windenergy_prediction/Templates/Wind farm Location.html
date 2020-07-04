@@ -50,7 +50,15 @@
             }
         }
 
-
+	#map {
+        height: 60%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
 
     </style>
 
@@ -73,28 +81,55 @@
             </div>
         </nav>
     </div>
-    <div>
-        <h1 style="text-align: center;">
-           Wind Farm Area Locator
-        </h1>
-    </div>
-    <div>
-        <main role="main" class="container">
-            <div class="jumbotron">
-                <label style="text-align: center;">Mention your wind farms location coordinates:</label>
-                <form action="add_location_map" style="text-align:left" method="POST">
-                    {% csrf_token %}
-                    <label>Farm Location 1:</label>
-                    <input type="text" name="lot" placeholder="Lattitude">
-                    <input type="text" name="log" placeholder="Longitude">
-                    <input type="text" name="mn" placeholder="Machine Name">
-                    <br>
+    <h2><center>Mark Your Location</center></h2>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+	var lat = 0;
+        var myLatlng = {lat: 11.138733848466073, lng: 77.00393732904831};
 
-                    <input type="submit" class="btn btn-primary">
-                </form><br>
-                <a type="button" class="btn btn-info" href="map">See wind farms in map view</a>
-            </div>
-        </main>
-    </div>
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 4, center: myLatlng});
+
+        // Create the initial InfoWindow.
+        var infoWindow = new google.maps.InfoWindow(
+            {content: 'Click the map to get Lat/Lng!', position: myLatlng});
+        infoWindow.open(map);
+
+        // Configure the click listener.
+        map.addListener('click', function(mapsMouseEvent) {
+          // Close the current InfoWindow.
+          infoWindow.close();
+
+          // Create a new InfoWindow.
+          infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
+          infoWindow.setContent(mapsMouseEvent.latLng.toString());
+	  lat = mapsMouseEvent.latLng.lat();
+          lon = mapsMouseEvent.latLng.lng();
+	  //document.write(lat,lon);
+	  oFormObject = document.forms['form1'];
+	  oFormObject.elements["lot"].value = lat;
+	  oFormObject.elements["log"].value = lon;
+	  
+          infoWindow.open(map);
+        });
+      }
+    </script>
+    <h3>Your Location</h3>
+    <form method="POST" action="add_location_map" id="form1">
+    {% csrf_token %}
+    <label for = "la">Latitude</label>
+    <input type="text" id="la" name="lot" placeholder="Lattitude" required>
+    <label for = "lo">Longitude</label>
+    <input type="text" id="lo" name="log" placeholder="Longitude" required>
+    <label for="machine">Machine Name</label>
+    <input type="text" id="machine" name="mn" placeholder="Machine Name" required>
+    <input type="submit">
+     </form>
+	<a type="button" class="btn btn-info" href="map" style="display:block;">See wind farms in map view</a>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1iacwK95dfKlJNNLfZFf6hRe3l9rE8Ks&callback=initMap">
+    </script>
+    
 </body>
 </html>
