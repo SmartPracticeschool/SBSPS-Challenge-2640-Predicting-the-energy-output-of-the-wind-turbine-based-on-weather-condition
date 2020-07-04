@@ -14,5 +14,6 @@ urlpatterns = [
     path('direct',views.direct,name="direct"),
     path('show_analysis',views.show_analysis,name='show_analysis'),
     path('show_graph',views.show_graph,name="show_graph"),
+    path('my_home', views.my_home, name="my_home"),
     #path('show_predict_values',views.show_predict_values,name="show_predict_values"),
 ]

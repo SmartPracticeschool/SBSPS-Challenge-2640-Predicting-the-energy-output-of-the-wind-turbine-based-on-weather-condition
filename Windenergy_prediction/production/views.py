@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect, HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import auth, User
 import folium
 import numpy as np
@@ -14,9 +15,15 @@ from django.views.decorators.cache import cache_control
 pred_list = []
 
 #Create your views here.
+def my_home(request):
+    username = User.objects.get(username=request.user.username)
+    return render(request, "My-home.html", {"username": username})
+
 def main(request):
     username = User.objects.get(username=request.user.username)
     return render(request, "user_home.html", {"username": username})
+
+@login_required(login_url='/login/')
 def direct(request):
     username = User.objects.get(username=request.user.username)
     return render(request, "My-home.html", {"username": username})
@@ -121,6 +128,7 @@ def comp_analysis(request):
 def windform_location(request):
     return render(request, "Wind farm Location.html")
 
+@login_required(login_url='/login/')
 def logout(request):
     auth.logout(request)
     return redirect('/')
