@@ -27,9 +27,9 @@
     <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#563d7c">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
     <style>
@@ -50,42 +50,43 @@
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    .slidecontainer {
-      width: 15%;
-      
-    }
-    
-    .slider {
-      -webkit-appearance: none;
-      width: 100%;
-      height: 25px;
-      background: #58ACFA;
-      outline: none;
-      opacity: 0.4;
-      -webkit-transition: .2s;
-      transition: opacity .3s;
-    }
-    
-    .slider:hover {
-      opacity: 2;
-    }
-    
-    .slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 25px;
-      height: 25px;
-      background: #4CAF50;
-      cursor: pointer;
-    }
-    
-    .slider::-moz-range-thumb {
-      width: 25px;
-      height: 25px;
-      background: #4CAF50;
-      cursor: pointer;
-    }
-    /* .container{
+        .slidecontainer {
+            width: 15%;
+
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 25px;
+            background: #58ACFA;
+            outline: none;
+            opacity: 0.4;
+            -webkit-transition: .2s;
+            transition: opacity .3s;
+        }
+
+        .slider:hover {
+            opacity: 2;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        /* .container{
         
         width: 100%;
         height: 100%;
@@ -106,17 +107,19 @@
                 aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-	    
-	     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="my_home">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="windform_location">Wind Farm Locations <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="windform_location">Wind Farm Locations <span
+                                class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="comp_analysis">Comparative Analysis <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="comp_analysis">Comparative Analysis <span
+                                class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="logout">Logout <span class="sr-only">(current)</span></a>
@@ -126,7 +129,8 @@
             </div>
 
             <div>
-                <img src="{% static 'nav_logo.png' %}" alt="Wind Mill logo" width="120" height="53" style="align-items: flex-end;">
+                <img src="{% static 'nav_logo.png' %}" alt="Wind Mill logo" width="120" height="53"
+                    style="align-items: flex-end;">
             </div>
         </nav>
     </div>
@@ -140,56 +144,48 @@
         <main role="main" class="container">
             <div class="jumbotron">
 
+                
+                <form action="upload" method="POST" enctype="multipart/form-data">
+                    {% csrf_token%}
+                    <label for="excel_file">Upload File (*only in .xls format):</label>
+                    <input type="file" name="file" id="excel_file" multiple accept=".xls,.xlsx"><br>
+                    <input type="submit" value="Upload" class="btn btn-primary">
+                </form><br>
+                <a href="show_analysis" role="button" class="btn btn-primary">Show Analysis</a>
 
-             <form action="upload" method="POST" enctype="multipart/form-data">
-             {% csrf_token%}
-            <label for="excel_file">Upload File (*only in .xls format):</label>
-            <input type="file" name="file" id="excel_file" multiple accept=".xls,.xlsx"><br>
-            <input type="submit" value="Upload" class="btn btn-primary">
-            </form>
-                <h3><center>{{result}}</center></h3>
+                <h3>
+                    <center>{{result}}</center>
+                </h3>
                 <br>
 
-        <form action="show_graph" method="post">
-         {% csrf_token%}
-            <label for="column_name">Enter Column Name that you want to predict</label><br>
-            <input type="text" name="column_name" id="column_name" placeholder="Column_name"><br>
-        <div class="slidecontainer">
-            <label for="myRange">Specify the number of hrs using slider:</label><br>
-            <input type="range" min="1" max="72" value="50"  id="myRange" name="slider">
-            <p>Value: <span id="demo"></span>hrs</p>
-          </div>
+                <form action="show_graph" method="post">
+                    {% csrf_token%}
+                    <label for="column_name">Enter Column Name that you want to predict:</label><br>
+                    <input type="text" name="column_name" id="column_name" placeholder="Column name"><br>
+                    <div class="slidecontainer" style="width: fit-content;">
+                        <label for="myRange">Specify hours using slider:</label><br>
+                        <input type="range" min="1" max="72" value="50" id="myRange" name="slider">
+                        <p>Value: <span id="demo"></span>hrs</p>
+                    </div>
 
-          <script>
-          var slider = document.getElementById("myRange");
-          var output = document.getElementById("demo");
-          output.innerHTML = slider.value;
+                    <script>
+                        var slider = document.getElementById("myRange");
+                        var output = document.getElementById("demo");
+                        output.innerHTML = slider.value;
 
-          slider.oninput = function() {
-            output.innerHTML = this.value;
-          }
-          </script>
-            <input type="submit" value="Prediction Graph" class="btn btn-primary">
-            </form>
+                        slider.oninput = function () {
+                            output.innerHTML = this.value;
+                        }
+                    </script>
+                    <input type="submit" value="Prediction Graph" class="btn btn-primary">
+                </form>
                 <br>
-        <a href="show_analysis" role="button" class="btn btn-primary">Show Analysis</a>
+                
+            
 
-
-        <hr>
-        <div class="container">
-            <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js">
-            anychart.onDocumentReady(function() {
-                var data = where the data
-                var chart = anychart.bar();
-                chart.data(data);
-                chart.title("Analyse");
-                chart.container("container");
-                chart.draw();
-            })
-            </script>
-        </div>
-        </div>
+            </div>
         </main>
     </div>
 </body>
+
 </html>
