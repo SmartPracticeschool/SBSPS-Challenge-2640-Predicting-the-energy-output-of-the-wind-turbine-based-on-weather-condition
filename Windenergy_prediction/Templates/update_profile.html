@@ -18,25 +18,25 @@
                 <div class="card">
                     <div class="card-header">Welcome {{username}} please update profile details.</div>
                     <div class="card-body">
-                        <form action="update_profile" method="POST">
+                        <form action="update" method="POST">
                             {% csrf_token %}
                         <div class="form-content">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="First Name *" name="fname" required/>
+                                        <input type="text" class="form-control" placeholder="First Name *" name="fname" value={{info.first_name}} required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Last Name *" name="lname" required/>
+                                        <input type="text" class="form-control" placeholder="Last Name *" name="lname" value={{info.last_name}} required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Phone Number *" name="phone" required/>
+                                        <input type="text" class="form-control" placeholder="Phone Number *" name="phone" value={{info.phone}} required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Pincode *" name="pincode" required/>
+                                        <input type="text" class="form-control" placeholder="Pincode *" name="pincode" value={{info.pincode}} required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Wind Farm Location *" name="location" required/>
+                                        <input type="text" class="form-control" placeholder="Wind Farm Location *" name="location" value={{info.location}} required/>
                                     </div>
 				    
                                     		    
@@ -45,28 +45,28 @@
                                       
 				    <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Organization Name *"
-                                            name="orgname" required/>
+                                            name="orgname" value={{info.orgname}} required/>
                                     </div>
                                   
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Organization Email *"
-                                            name="orgemail" required/>
+                                            name="orgemail" value={{info.orgemail}} required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Country *" name="country" required/>
+                                        <input type="text" class="form-control" placeholder="Country *" name="country" value={{info.country}} required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="State *" name="state" required/>
+                                        <input type="text" class="form-control" placeholder="State *" name="state" value={{info.state}} required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Owned number of wind farms  *" name="no_of_wind" required/>
+                                        <input type="text" class="form-control" placeholder="Omned number of wind farms  *" name="no_of_wind" value={{info.no_of_wind}} required/>
                                     </div>
 				    
 				    
                                 </div>
                             </div>
                             <button type="submit"
-                                class="btn btn-primary btn-lg btn-block login-button">Register</button>
+                                class="btn btn-primary btn-lg btn-block login-button">update</button>
                         </div>
                         </form>
                     </div>

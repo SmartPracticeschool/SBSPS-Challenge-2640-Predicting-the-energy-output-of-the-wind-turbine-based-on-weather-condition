@@ -53,11 +53,7 @@ def add_location_map(request):
         longi.append(i['longtitude'])
         mn.append(i['machine_name'])
 
-    loc_info1 = wind_details.objects.filter(username=username).values('latitude', 'longitude', 'orgname')
-    for i in loc_info1:
-        latt.append(i['latitude'])
-        longi.append(i['longitude'])
-        mn.append(i['orgname'])
+    
     #map = folium.Map(location=[lat,lon], zoom_start=6,tiles="Stamen Terrain")
     map = folium.Map()
     fg = folium.FeatureGroup(name="test")
@@ -79,8 +75,7 @@ def update_profile(request):
     country = request.POST['country']
     state = request.POST['state']
     no_of_wind = request.POST['no_of_wind']
-    latt = request.POST['latt']
-    long = request.POST['long']
+    
     wd = wind_details()
     wd.username = un
     wd.first_name = fn
@@ -93,19 +88,13 @@ def update_profile(request):
     wd.country = country
     wd.state = state
     wd.no_of_wind = no_of_wind
-    wd.latitude = latt
-    wd.longitude = long
     wd.save()
 
-    loc_info1 = wind_details.objects.filter(username=un).values('latitude', 'longitude', 'orgname')
+    
     latt = []
     long = []
     mn = []
-    for i in loc_info1:
-        latt.append(i['latitude'])
-        long.append(i['longitude'])
-        mn.append(i['orgname'])
-
+    
     loc_info = location_details.objects.filter(user_name=un).values('lattitude', 'longtitude', 'machine_name')
     for i in loc_info:
         latt.append(i['lattitude'])
@@ -276,5 +265,3 @@ def show_graph(request):
 
     return render(request, "prediction_graph.html")
 
-# def show_predict_values(request):
-#     return render(request, "prediction_output.html",{'output' : pred_list})
