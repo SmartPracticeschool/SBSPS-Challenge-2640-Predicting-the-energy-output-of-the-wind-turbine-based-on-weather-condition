@@ -93,7 +93,7 @@ mysql-connector==2.2.9
 nbconvert==5.3.1
 nbformat==4.4.0
 netifaces==0.10.4
-notebook==5.2.2
+notebook==6.4.12
 numba==0.46.0
 numpy==1.17.4
 oauth==1.0.1
